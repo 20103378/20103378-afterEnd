@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.cable.system.mapper.GasConcentrationMapper">
+
+    <select id="findGasConcentrationBySearch" resultType="cc.mrbird.febs.cable.system.entity.dto.GasConcentrationDTO">
+
+        SELECT g.time,g.concentration,s.gas_name FROM gas_concentration g
+        left join device d on g.device_id = d.id left join gas s on g.gas_id = s.id and s.status = 1
+        WHERE 1 = 1
+        <if test="deviceId != null and deviceId != ''">
+            AND d.device_id = #{deviceId}
+        </if>
+        <if test="startTime != null and startTime != ''">
+            and g.time >= #{startTime,jdbcType=TIMESTAMP}
+        </if>
+        <if test="endTime != null and endTime != ''">
+            and #{endTime,jdbcType=TIMESTAMP} >= g.time
+        </if>
+        ORDER BY g.time asc
+    </select>
+</mapper>

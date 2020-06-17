@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.cable.system.mapper.DeviceMapper">
+
+    <resultMap id="deviceMap" type="cc.mrbird.febs.cable.system.entity.Device">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="device_id" jdbcType="VARCHAR" property="deviceId"/>
+        <result column="device_name" jdbcType="VARCHAR" property="deviceName"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="sample_period" jdbcType="INTEGER" property="samplePeriod"/>
+        <result column="status" jdbcType="CHAR" property="status"/>
+        <result column="topic" jdbcType="VARCHAR" property="topic"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+
+    </resultMap>
+
+    <select id="findDeviceDetailPage" parameterType="cc.mrbird.febs.cable.system.entity.Device" resultMap="deviceMap">
+        SELECT
+        r.*
+        FROM
+        device r
+        WHERE 1 = 1
+        <if test="device.deviceId != null and device.deviceId != ''">
+            AND r.device_id like CONCAT('%',#{device.deviceId},'%')
+        </if>
+        <if test="device.deviceName != null and device.deviceName != ''">
+            AND r.device_name like CONCAT('%',#{device.deviceName},'%')
+        </if>
+    </select>
+</mapper>
