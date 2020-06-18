@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 /**
- * @author MrBird
+ * @author 熔断回退
  */
 @Slf4j
 @RestController
