@@ -16,7 +16,7 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 /**
- * @author MrBird
+ * @author nana 设置全局拦截器
  */
 @Slf4j
 @Component
