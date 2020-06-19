@@ -11,7 +11,10 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 /**
- * @author MrBird
+ * @author AuthenticationManager 负责校验 Authentication 对象。在 AuthenticationManager 的 authenticate 函数中，开发人员实现对 Authentication 的校验逻辑。
+ *
+ * 作者：笛声hk
+ * 链接：https://www.jianshu.com/p/e013ca21d91d
  */
 @Component
 @RequiredArgsConstructor

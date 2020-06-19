@@ -15,7 +15,7 @@ import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
 /**
- * @author MrBird
+ * @author 解决跨域问题
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)

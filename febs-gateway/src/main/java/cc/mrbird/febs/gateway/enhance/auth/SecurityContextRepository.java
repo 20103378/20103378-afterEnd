@@ -15,7 +15,7 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 /**
- * @author MrBird
+ * @author 此处用于从请求的信息中载入验证信息（即将header中的token包装成Authentication并进行验证）
  */
 @Component
 @RequiredArgsConstructor

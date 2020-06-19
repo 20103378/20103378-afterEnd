@@ -4,10 +4,7 @@ import cc.mrbird.febs.cable.system.entity.GasConcentration;
 import cc.mrbird.febs.cable.system.entity.dto.GasConcentrationDTO;
 import cc.mrbird.febs.cable.system.mapper.GasConcentrationMapper;
 import cc.mrbird.febs.cable.system.service.IGasConcentrationService;
-import cc.mrbird.febs.common.core.entity.system.Dept;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.annotation.Propagation;
@@ -17,10 +14,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cc.mrbird.febs.common.core.entity.QueryRequest;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  *  Service实现
